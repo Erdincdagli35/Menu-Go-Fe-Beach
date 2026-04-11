@@ -22,7 +22,8 @@ export class MenuComponent {
   showAdminLogin: boolean = false ;
   adminPassword: string = "" ;
 
-  constructor(private menuService: MenuService, private route: ActivatedRoute, private router: Router) {}
+  constructor(private menuService: MenuService, 
+              private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit(): void {
     this.fetchMenu();

@@ -14,7 +14,7 @@ export class AdminProductControlComponent {
 menuItems: MenuItem[] = [];
   isLoading: boolean = true;
   hasError: boolean = false;
-  items: MenuItem[] = [];
+  items: MenuItem [] = [];
   currentLang: string = 'TR';
   constructor(private menuService: MenuService, private route: ActivatedRoute, private router: Router) {}
 

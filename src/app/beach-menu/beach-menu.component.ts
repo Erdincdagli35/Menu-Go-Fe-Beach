@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute, Router} from '@angular/router';
 
 import { BeachCategory } from '../model/beach-category';
 import { BeachMenu } from '../model/beach-menu';
@@ -17,7 +18,13 @@ export class BeachMenuComponent {
     selectedCategory: BeachCategory | null = null;
     currentLang: string = 'TR'; 
   
-    constructor(private menuService: MenuService) {}
+    isAdminMode: boolean = false ;
+    showAdminLogin: boolean = false ;
+    adminPassword: string = "" ;
+    
+    constructor(private menuService: MenuService,
+                private route: ActivatedRoute, private router: Router
+    ) {}
   
     ngOnInit(): void {
       this.fetchMenu();
@@ -77,4 +84,8 @@ export class BeachMenuComponent {
     selectCategory(category: BeachCategory) {
       this.selectedCategory = category;
     }
+    
+    navigateToAdminPanel() {
+    this.router.navigate(['admin/login']);
+  }
 }

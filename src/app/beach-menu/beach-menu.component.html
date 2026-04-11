@@ -1,5 +1,8 @@
 <div class="menu-container">
 
+  <div class="admin-panel">
+    <button (click)="navigateToAdminPanel()">Yönetici Paneli</button>
+  </div>
   
   <div class="language-switcher">
     <button (click)="changeLanguage('TR')" [class.active]="currentLang === 'TR'">🇹🇷 Türkçe</button>
