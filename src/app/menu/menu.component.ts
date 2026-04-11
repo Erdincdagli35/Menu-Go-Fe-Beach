@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute, Router} from '@angular/router';
 
 import { MenuItem } from '../model/menu';
 import { MenuService } from '../service/menu-service';
@@ -17,7 +18,11 @@ export class MenuComponent {
   selectedCategory: Category | null = null;
   currentLang: string = 'TR'; // ✅ Varsayılan dil
 
-  constructor(private menuService: MenuService) {}
+  isAdminMode: boolean = false ;
+  showAdminLogin: boolean = false ;
+  adminPassword: string = "" ;
+
+  constructor(private menuService: MenuService, private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit(): void {
     this.fetchMenu();
@@ -80,5 +85,9 @@ export class MenuComponent {
 
   selectCategory(category: Category) {
     this.selectedCategory = category;
+  }
+
+  navigateToAdminPanel() {
+    this.router.navigate(['admin/login']);
   }
 }
