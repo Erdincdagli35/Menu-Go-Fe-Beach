@@ -17,9 +17,11 @@ export class LoginPageComponent implements OnInit {
   constructor(private router: Router) {}
 
   login() {
-    if (this.username === 'terasotel' && this.password === '2025') {
+    if (this.username === 'zakkum' && this.password === '2025') {
       console.log("Login success");
-      this.router.navigate(['admin/product-control']);
+      this.router.navigate(['admin/product-control']).then(() => {
+        window.location.reload();
+      });
       this.loginError = false;
     } else {
       this.loginError = true;

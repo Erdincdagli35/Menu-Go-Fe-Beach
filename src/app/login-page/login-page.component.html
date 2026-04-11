@@ -1,7 +1,7 @@
 <div class="admin-login-overlay" *ngIf="showAdminLogin">
   <div class="admin-login-modal">
 
-    <h2>Admin Panel</h2>
+    <h2>Yönetici Paneli</h2>
     <p class="subtitle">Yetkili giriş</p>
 
     <div class="input-group">
@@ -11,7 +11,7 @@
         [(ngModel)]="username"
         required
       />
-      <label>Username</label>
+      <label>Kullanıcı Adı</label>
     </div>
 
     <div class="input-group">
@@ -21,7 +21,7 @@
         [(ngModel)]="password"
         required
       />
-      <label>Password</label>
+      <label>Şifre</label>
     </div>
 
     <button class="login-btn" (click)="login()">
