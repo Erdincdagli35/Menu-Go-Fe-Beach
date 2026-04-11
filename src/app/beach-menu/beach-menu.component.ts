@@ -86,6 +86,8 @@ export class BeachMenuComponent {
     }
     
     navigateToAdminPanel() {
-    this.router.navigate(['admin/login']);
+    this.router.navigate(['admin/login']).then(() => {
+        window.location.reload();
+      });
   }
 }

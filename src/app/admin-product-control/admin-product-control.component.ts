@@ -46,6 +46,12 @@ export class AdminProductControlComponent {
     console.log("Add clicked");
   }
 
+  goToMenu(): void {
+    this.router.navigate(['menu/plaj']).then(() => {
+        window.location.reload();
+      });
+  }
+
   // ✏️ EDIT
   editItem(item: any): void {
     console.log("Edit:", item);
