@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, Router} from '@angular/router';
 
 import { MenuItem } from '../model/menu';
+import { BeachMenu } from '../model/beach-menu';
 import { MenuService } from '../service/menu-service';
 import { Category } from '../model/category';
 
@@ -11,10 +12,9 @@ import { Category } from '../model/category';
   styleUrls: ['./admin-product-control.component.css']
 })
 export class AdminProductControlComponent {
-menuItems: MenuItem[] = [];
   isLoading: boolean = true;
   hasError: boolean = false;
-  items: MenuItem [] = [];
+  items: BeachMenu [] = [];
   currentLang: string = 'TR';
   constructor(private menuService: MenuService, private route: ActivatedRoute, private router: Router) {}
 
@@ -26,7 +26,7 @@ menuItems: MenuItem[] = [];
   loadItems(): void {
     this.isLoading = true;
 
-    this.menuService.getMenuList(this.currentLang).subscribe({
+    this.menuService.getBeachMenuList(this.currentLang).subscribe({
       next: (data) => {
         this.items = data;
         this.isLoading = false;
