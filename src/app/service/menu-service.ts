@@ -27,5 +27,5 @@ export class MenuService {
   getBeachMenuList(lang: string): Observable<BeachMenu[]> {
     const url = `${this.baseBeachURL}?lang=${lang}`;
     return this.httpClient.get<BeachMenu[]>(url);
-  }
+  } 
 }
