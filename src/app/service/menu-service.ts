@@ -33,4 +33,16 @@ export class MenuService {
   create(menu: Partial<BeachMenu>) {
     return this.httpClient.post<BeachMenu>(`${this.baseBeachURL}/create`, menu);
   }
+
+  delete(id: number) {
+    return this.httpClient.delete<void>(`${this.baseBeachURL}/${id}`);
+  }
+
+  getById(id: number) {
+  return this.httpClient.get<BeachMenu>(`${this.baseBeachURL}/${id}`);
+ }
+
+  edit(id: number, menu: Partial<BeachMenu>) {
+    return this.httpClient.put<Observable<BeachMenu>>(`${this.baseBeachURL}/${id}`,menu);
+  }
 }

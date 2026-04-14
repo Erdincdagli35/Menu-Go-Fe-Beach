@@ -10,6 +10,8 @@ import { BeachMenuComponent } from './beach-menu/beach-menu.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { AdminProductControlComponent } from './admin-product-control/admin-product-control.component';
 import { MenuCreateComponent } from './menu-create/menu-create.component';
+import { MenuDeleteComponent } from './menu-delete/menu-delete.component';
+import { MenuEditComponent } from './menu-edit/menu-edit.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,8 @@ import { MenuCreateComponent } from './menu-create/menu-create.component';
     BeachMenuComponent,
     LoginPageComponent,
     AdminProductControlComponent,
-    MenuCreateComponent
+    MenuCreateComponent,
+    MenuDeleteComponent
   ],
   imports: [
     BrowserModule,

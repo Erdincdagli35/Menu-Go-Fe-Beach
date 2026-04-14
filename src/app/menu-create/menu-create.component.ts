@@ -85,7 +85,7 @@ export class MenuCreateComponent implements OnInit {
     this.menuService.create(this.form.value).subscribe({
       next: () => {
         this.submitting = false;
-        this.router.navigate(['menu/beach']);
+        this.router.navigate(['admin/product-control']);
       },
       error: err => {
         this.submitting = false;
@@ -95,6 +95,6 @@ export class MenuCreateComponent implements OnInit {
   }
 
   cancel(): void {
-    this.router.navigate(['menu/beach']);
+    this.router.navigate(['admin/product-control']);
   }
 }
