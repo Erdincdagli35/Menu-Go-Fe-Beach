@@ -67,8 +67,8 @@ export class BeachMenuComponent {
       } else {
         switch (category) {
           case BeachCategory.Burgers: return 'Burgers';
-          case BeachCategory.ColdDrinks: return 'Sıcak İçeçekler';
-          case BeachCategory.HotDrinks: return 'Soğuk İçeçekler';
+          case BeachCategory.ColdDrinks: return 'Soğuk İçeçekler';
+          case BeachCategory.HotDrinks: return 'Sıcak İçeçekler';
           case BeachCategory.Sandawichs: return 'Tostlar';
           case BeachCategory.Snacks: return 'Aparatifler';
           case BeachCategory.Beer: return 'Biralar';
