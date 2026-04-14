@@ -35,6 +35,6 @@ export class LoginPageComponent implements OnInit {
 
   cancel() {
     this.showAdminLogin = false;
-    this.router.navigate(['menu/restuarant']);
+    this.router.navigate(['menu/beach']);
   }
 }

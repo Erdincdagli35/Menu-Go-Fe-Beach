@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, Router} from '@angular/router';
 
 import { MenuItem } from '../model/menu';
-import { BeachMenu } from '../model/beach-menu';
+import { BeachMenuResponse } from '../model/beach-menu-response';
 import { MenuService } from '../service/menu-service';
 import { Category } from '../model/category';
 
@@ -14,7 +14,7 @@ import { Category } from '../model/category';
 export class AdminProductControlComponent {
   isLoading: boolean = true;
   hasError: boolean = false;
-  items: BeachMenu [] = [];
+  items: BeachMenuResponse [] = [];
   currentLang: string = 'TR';
   constructor(private menuService: MenuService, private route: ActivatedRoute, private router: Router) {}
 
@@ -43,11 +43,13 @@ export class AdminProductControlComponent {
 
   // ➕ CREATE
   addItem(): void {
-    console.log("Add clicked");
+    this.router.navigate(['menu/create']).then(() => {
+        window.location.reload();
+      });
   }
 
   goToMenu(): void {
-    this.router.navigate(['menu/plaj']).then(() => {
+    this.router.navigate(['menu/beach']).then(() => {
         window.location.reload();
       });
   }

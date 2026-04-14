@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, Router} from '@angular/router';
 
 import { BeachCategory } from '../model/beach-category';
-import { BeachMenu } from '../model/beach-menu';
+import { BeachMenuResponse } from '../model/beach-menu-response';
 import { MenuService } from '../service/menu-service';
 
 @Component({
@@ -11,7 +11,7 @@ import { MenuService } from '../service/menu-service';
   styleUrls: ['./beach-menu.component.css']
 })
 export class BeachMenuComponent {
-  menuItems: BeachMenu[] = [];
+  menuItems: BeachMenuResponse[] = [];
     isLoading: boolean = true;
     hasError: boolean = false;
     categories = Object.values(BeachCategory);
@@ -77,7 +77,7 @@ export class BeachMenuComponent {
       return category;
     }
   
-    getItemsByCategory(category: BeachCategory): BeachMenu[] {
+    getItemsByCategory(category: BeachCategory): BeachMenuResponse[] {
       return this.menuItems.filter(item => item.category === category);
     }
   
