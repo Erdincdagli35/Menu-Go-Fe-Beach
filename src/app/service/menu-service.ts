@@ -14,9 +14,9 @@ export class MenuService {
   isLoading = false;
   hasError = false;
 
-  private baseBeachURL = "http://localhost:8080/api/menu";
+  //private baseBeachURL = "http://localhost:8080/api/menu";
   private baseURL = 'https://menu-go-be-production.up.railway.app/api/menu';
-  //private baseBeachURL = 'https://menu-go-be-beach-production.up.railway.app/api/menu/beach';
+  private baseBeachURL = 'https://menu-go-be-beach-production.up.railway.app/api/menu/beach';
 
   constructor(private httpClient: HttpClient) { }
 
@@ -28,7 +28,7 @@ export class MenuService {
   getBeachMenuList(lang: string): Observable<BeachMenuResponse[]> {
     const url = `${this.baseBeachURL}/beach?lang=${lang}`;
     return this.httpClient.get<BeachMenuResponse[]>(url);
-  } 
+  }
 
   create(menu: Partial<BeachMenu>) {
     return this.httpClient.post<BeachMenu>(`${this.baseBeachURL}/create`, menu);
