@@ -5,6 +5,7 @@ import { MenuItem } from '../model/menu';
 import { BeachMenuResponse } from '../model/beach-menu-response';
 import { MenuService } from '../service/menu-service';
 import { Category } from '../model/category';
+import { BeachMenu } from '../model/beach-menu';
 
 @Component({
   selector: 'app-admin-product-control',
@@ -55,9 +56,13 @@ export class AdminProductControlComponent {
   }
 
   // ✏️ EDIT
-  editItem(item: any): void {
-    console.log("Edit:", item);
-  }
+  editItem(id: number) {
+  console.log("go to update before : id : " + id);
+
+  this.router.navigate(['menu/edit', id]);
+
+  console.log("go to update after");
+}
 
   // ❌ DELETE
   deleteItem(id: number): void {

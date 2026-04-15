@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: 'admin/product-control', component: AdminProductControlComponent },
   { path: 'menu/create', component: MenuCreateComponent },
   { path: 'menu/delete', component: MenuDeleteComponent },
-  { path: 'menu/edit:id', component: MenuEditComponent },
+  { path: 'menu/edit/:id', component: MenuEditComponent },
   { path: '**', redirectTo: 'menu/beach' }
 ];
 

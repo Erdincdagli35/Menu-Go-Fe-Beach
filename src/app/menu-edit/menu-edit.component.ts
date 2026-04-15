@@ -39,27 +39,16 @@ export class MenuEditComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = Number(this.route.snapshot.paramMap.get('id'));
-    this.loadCategoriesFromEnum();
 
-     this.id = Number(this.route.snapshot.paramMap.get('id'));
     if (!this.id) {
       alert('Geçersiz ürün id');
       this.router.navigate(['admin/product-control']);
       return;
     }
 
-    this.menuService.getById(this.id).subscribe({
-      next: (p: BeachMenu) => {
-        this.form.patchValue(p);
-      },
-      error: err => {
-        alert('Ürün bulunamadı veya yüklenemedi.');
-        this.router.navigate(['admin/product-control']);
-      }
-    });
-
-    this.getItem();
-  }
+    this.loadCategoriesFromEnum();
+    this.getItem(); // 🔥 TEK ÇAĞRI
+ }
 
   private loadCategoriesFromEnum(): void {
     const vals = Object.values(BeachCategory).filter(v => typeof v === 'string') as string[];
@@ -85,24 +74,28 @@ export class MenuEditComponent implements OnInit {
   }
 
   getItem(): void {
-    this.menuService.getById(this.id).subscribe(res => {
-
-      this.form.patchValue({
-        price: res.price,
-        beachCategory: res.beachCategory
-      });
-
-      const formArray = this.translations;
-      formArray.clear();
-
-      if (res.translations && res.translations.length > 0) {
-        res.translations.forEach(t => {
-          formArray.push(this.createTranslation(t));
+    this.menuService.getById(this.id).subscribe({
+      next: (res) => {
+        this.form.patchValue({
+          price: res.price,
+          beachCategory: res.beachCategory
         });
-      } else {
-        // 🔥 fallback (boş gelirse UI boş kalmasın)
-        formArray.push(this.createTranslation({ lang: 'TR', name: '', description: '' }));
-        formArray.push(this.createTranslation({ lang: 'EN', name: '', description: '' }));
+
+        const formArray = this.translations;
+        formArray.clear();
+
+        if (res.translations && res.translations.length > 0) {
+          res.translations.forEach(t => {
+            formArray.push(this.createTranslation(t));
+          });
+        } else {
+          formArray.push(this.createTranslation({ lang: 'TR', name: '', description: '' }));
+          formArray.push(this.createTranslation({ lang: 'EN', name: '', description: '' }));
+        }
+      },
+      error: () => {
+        alert('Ürün bulunamadı');
+        this.router.navigate(['admin/product-control']);
       }
     });
   }
