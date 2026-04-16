@@ -1,8 +1,8 @@
 export enum BeachCategory {
-  BURGERS = "BURGERS",
-  COLD_DRINKS = "COLD_DRINKS",
-  HOT_DRINKS = "HOT_DRINKS",
-  SNACKS = "SNACKS",
-  BEER = "BEER",
-  SANDWICHES = "SANDWICHES"
+    Burgers = "Burgers",
+    ColdDrinks = "ColdDrinks",
+    HotDrinks = "HotDrinks",
+    Snacks = "Snacks",
+    Beer = "Beer",
+    Sandawichs = "Sandawichs"
 }

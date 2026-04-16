@@ -57,21 +57,21 @@ export class BeachMenuComponent {
     getCategoryLabel(category: BeachCategory): string {
       if (this.currentLang === 'EN') {
         switch (category) {
-          case BeachCategory.BURGERS: return 'Burgers';
-          case BeachCategory.COLD_DRINKS: return 'Cold Drinks';
-          case BeachCategory.HOT_DRINKS: return 'Hot Drinks';
-          case BeachCategory.SANDWICHES: return 'Sandawichs';
-          case BeachCategory.SNACKS: return 'Snacks';
-          case BeachCategory.BEER: return 'Beer';
+          case BeachCategory.Burgers: return 'Burgers';
+          case BeachCategory.ColdDrinks: return 'Cold Drinks';
+          case BeachCategory.HotDrinks: return 'Hot Drinks';
+          case BeachCategory.Sandawichs: return 'Sandawichs';
+          case BeachCategory.Snacks: return 'Snacks';
+          case BeachCategory.Beer: return 'Beer';
         }
       } else {
         switch (category) {
-          case BeachCategory.BURGERS: return 'Burgers';
-          case BeachCategory.COLD_DRINKS: return 'Soğuk İçeçekler';
-          case BeachCategory.HOT_DRINKS: return 'Sıcak İçeçekler';
-          case BeachCategory.SANDWICHES: return 'Tostlar';
-          case BeachCategory.SNACKS: return 'Aparatifler';
-          case BeachCategory.BEER: return 'Biralar';
+          case BeachCategory.Burgers: return 'Burgers';
+          case BeachCategory.ColdDrinks: return 'Soğuk İçeçekler';
+          case BeachCategory.HotDrinks: return 'Sıcak İçeçekler';
+          case BeachCategory.Sandawichs: return 'Tostlar';
+          case BeachCategory.Snacks: return 'Aparatifler';
+          case BeachCategory.Beer: return 'Biralar';
         }
       }
       return category;
