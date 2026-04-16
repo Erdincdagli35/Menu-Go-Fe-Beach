@@ -58,10 +58,9 @@
 
 /* Dropdown menu */
 .dropdown-menu {
-  border-radius: 12px;
-  border: none;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
-  padding: 0.4rem;
+  min-width: 200px;
+  width: auto;
+  max-width: 250px; /* 🔥 burayı ayarla */
 }
 
 /* Dropdown item */

@@ -35,3 +35,9 @@ h3 {
 .btn-secondary {
   border-radius: 10px;
 }
+
+.dropdown-menu {
+  min-width: 200px;
+  width: auto;
+  max-width: 250px; /* 🔥 burayı ayarla */
+}

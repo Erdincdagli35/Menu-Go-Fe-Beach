@@ -66,9 +66,19 @@ export class AdminProductControlComponent {
 
   // ❌ DELETE
   deleteItem(id: number): void {
-    const confirmDelete = confirm('Silmek istediğine emin misin?');
-    if (confirmDelete) {
-      this.items = this.items.filter(i => i.id !== id);
-    }
+  const confirmDelete = confirm('Silmek istediğine emin misin?');
+
+  if (confirmDelete) {
+    this.menuService.delete(id).subscribe({
+      next: () => {
+        // API başarılıysa UI'dan da sil
+        this.items = this.items.filter(i => i.id !== id);
+      },
+      error: (err) => {
+        console.error('Silme hatası:', err);
+        alert('Silme işlemi başarısız!');
+      }
+    });
+  }
   }
 }
