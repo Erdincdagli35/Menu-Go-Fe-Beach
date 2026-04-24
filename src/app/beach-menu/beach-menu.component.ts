@@ -16,20 +16,20 @@ export class BeachMenuComponent {
     hasError: boolean = false;
     categories = Object.values(BeachCategory);
     selectedCategory: BeachCategory | null = null;
-    currentLang: string = 'TR'; 
-  
+    currentLang: string = 'TR' ;
+
     isAdminMode: boolean = false ;
     showAdminLogin: boolean = false ;
     adminPassword: string = "" ;
-    
+
     constructor(private menuService: MenuService,
                 private route: ActivatedRoute, private router: Router
     ) {}
-  
+
     ngOnInit(): void {
       this.fetchMenu();
     }
-  
+
     fetchMenu(): void {
       this.isLoading = true;
       this.menuService.getBeachMenuList(this.currentLang).subscribe({
@@ -46,14 +46,14 @@ export class BeachMenuComponent {
         }
       });
     }
-  
+
     changeLanguage(lang: string): void {
       if (this.currentLang !== lang) {
         this.currentLang = lang;
         this.fetchMenu(); // ✅ API tekrar çağırılır
       }
     }
-  
+
     getCategoryLabel(category: BeachCategory): string {
       if (this.currentLang === 'EN') {
         switch (category) {
@@ -76,15 +76,15 @@ export class BeachMenuComponent {
       }
       return category;
     }
-  
+
     getItemsByCategory(category: BeachCategory): BeachMenuResponse[] {
       return this.menuItems.filter(item => item.category === category);
     }
-  
+
     selectCategory(category: BeachCategory) {
       this.selectedCategory = category;
     }
-    
+
     navigateToAdminPanel() {
     this.router.navigate(['admin/login']).then(() => {
         window.location.reload();
