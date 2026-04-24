@@ -15,7 +15,7 @@ export class MenuService {
   hasError = false;
 
   //private baseBeachURL = "http://localhost:8080/api/menu";
-  private baseURL = 'https://menu-go-be-production.up.railway.app/api/menu';
+  private baseURL = 'https://menu-go-be-beach-test.up.railway.app/api/menu';
   private baseBeachURL = 'https://menu-go-be-beach-test.up.railway.app/api/menu';
 
   constructor(private httpClient: HttpClient) { }
